@@ -8,11 +8,11 @@
 <meta property="og:title" content="Lucas Potiron — Cybersécurité & Réseaux">
 <meta property="og:description" content="Analyste SOC, étudiant BUT R&T, futur architecte réseau & cybersécurité.">
 <meta property="og:type" content="website">
-<meta property="og:url" content="https://lucaspotiron.netlify.app">
+<meta property="og:url" content="https://portfolio-lpro.netlify.app">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Lucas Potiron — Cybersécurité & Réseaux">
 <meta name="twitter:description" content="Analyste SOC, étudiant BUT R&T, futur architecte réseau & cybersécurité.">
-<link rel="canonical" href="https://lucaspotiron.netlify.app">
+<link rel="canonical" href="https://portfolio-lpro.netlify.app">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Share+Tech+Mono&family=Syne:wght@400;600;700;800&display=swap" rel="stylesheet">
@@ -611,6 +611,45 @@
     background: var(--accent); flex-shrink: 0;
   }
 
+  /* CERTIFICATIONS */
+  .certs-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 1.2rem;
+    max-width: 1000px; margin: 0 auto;
+  }
+  .cert-card {
+    background: var(--bg2);
+    border: 1px solid rgba(245,166,35,0.2);
+    padding: 1.4rem 1.8rem;
+    clip-path: polygon(0 0, calc(100% - 14px) 0, 100% 14px, 100% 100%, 0 100%);
+    display: flex; align-items: flex-start; gap: 1.2rem;
+    opacity: 0; transform: translateY(20px);
+    transition: opacity 0.5s, transform 0.5s, border-color 0.3s;
+  }
+  .cert-card.visible { opacity: 1; transform: translateY(0); }
+  .cert-card:hover { border-color: rgba(245,166,35,0.5); }
+  .cert-card-icon { font-size: 1.6rem; flex-shrink: 0; margin-top: 2px; }
+  .cert-card-body { display: flex; flex-direction: column; gap: 0.3rem; }
+  .cert-card-name { font-size: 0.95rem; font-weight: 700; color: #fff; line-height: 1.4; }
+  .cert-card-issuer {
+    font-family: var(--font-mono); font-size: 0.72rem;
+    color: var(--accent3); letter-spacing: 0.05em;
+  }
+  .cert-card-date {
+    font-family: var(--font-mono); font-size: 0.68rem;
+    color: var(--text-dim);
+  }
+  .cert-card--wip {
+    border-color: rgba(0,170,255,0.2);
+    opacity: 0.85;
+  }
+  .cert-card--wip:hover { border-color: rgba(0,170,255,0.5); }
+  .cert-card-date--wip {
+    color: var(--accent2);
+    font-style: italic;
+  }
+
   /* RESPONSIVE */
   /* HAMBURGER BUTTON */
   .nav-hamburger {
@@ -683,8 +722,9 @@
     <li><a href="#about"><span class="nav-num">01.</span>Profil</a></li>
     <li><a href="#experience"><span class="nav-num">02.</span>Expérience</a></li>
     <li><a href="#skills"><span class="nav-num">03.</span>Skills</a></li>
-    <li><a href="#kiviat"><span class="nav-num">04.</span>Radar</a></li>
-    <li><a href="#education"><span class="nav-num">05.</span>Formation</a></li>
+    <li><a href="#certifications"><span class="nav-num">04.</span>Certifs</a></li>
+    <li><a href="#kiviat"><span class="nav-num">05.</span>Radar</a></li>
+    <li><a href="#education"><span class="nav-num">06.</span>Formation</a></li>
   </ul>
   <a href="#contact" class="nav-cta">Contact →</a>
   <button id="nav-hamburger" class="nav-hamburger" aria-label="Ouvrir le menu" aria-expanded="false">
@@ -850,7 +890,7 @@
 
     <div class="skill-card">
       <span class="skill-card-icon">🚗</span>
-      <div class="skill-card-title">Certifications & Permis</div>
+      <div class="skill-card-title">Qualifications & Permis</div>
       <div class="skill-tags">
         <span class="tag">PSC1</span>
         <span class="tag">Permis B</span>
@@ -868,6 +908,35 @@
         <span class="tag">Curiosité</span>
         <span class="tag">Adaptabilité</span>
         <span class="tag">Concentration</span>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- CERTIFICATIONS -->
+<section id="certifications">
+  <p class="section-tag">Certifications professionnelles</p>
+  <h2 class="section-title">Certif<span>ications</span></h2>
+  <div class="certs-grid">
+
+    <div class="cert-card">
+      <span class="cert-card-icon">🛡️</span>
+      <div class="cert-card-body">
+        <div class="cert-card-name">Fortinet Certified Fundamentals Cybersecurity</div>
+        <div class="cert-card-issuer">Fortinet</div>
+        <div class="cert-card-date">Émise : déc. 2025 · Expire : déc. 2027</div>
+      </div>
+    </div>
+
+    <div class="cert-card cert-card--wip">
+      <span class="cert-card-icon">📡</span>
+      <div class="cert-card-body">
+        <div class="cert-card-name">Cisco Certified Network Associate (CCNA)</div>
+        <div class="cert-card-issuer">Cisco</div>
+        <div class="cert-card-date cert-card-date--wip">En préparation</div>
       </div>
     </div>
 
@@ -1071,7 +1140,7 @@
     });
   }, { threshold: 0.1 });
 
-  document.querySelectorAll('.timeline-item, .skill-card, .edu-card, .lang-item').forEach(el => obs.observe(el));
+  document.querySelectorAll('.timeline-item, .skill-card, .edu-card, .lang-item, .cert-card').forEach(el => obs.observe(el));
 
   // ── KIVIAT / RADAR CHARTS ──────────────────────────────────────────────────
   const ACCENT   = '#00f5c4';

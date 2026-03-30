@@ -23,11 +23,12 @@
 
 ---
 
-## v1.2.0 — Nouvelles sections *(en attente des infos)*
-- [ ] Section `#certifications` (données LinkedIn requises)
-- [ ] Section `#projects` (titres et descriptions requis)
-- [ ] Navbar mise à jour (nouvelles entrées)
-- [ ] Carte "Certifications & Permis" retirée de `#skills`
+## v1.2.0 — Nouvelles sections (30/03/2026)
+- [x] Section `#certifications` ajoutée (Fortinet FCF + CCNA en préparation)
+- [x] Carte `#skills` renommée "Qualifications & Permis" (PSC1, Permis B/Bateau, etc.)
+- [x] Navbar mise à jour (04. Certifs, 05. Radar, 06. Formation)
+- [x] Scroll-reveal étendu aux `.cert-card`
+- [ ] Section `#projects` *(en attente des titres/descriptions)*
 
 ---
 
@@ -46,7 +47,7 @@
 | Info | Statut |
 |------|--------|
 | Email réel (pour remplacer Cloudflare) | ⏳ En attente |
-| URL Netlify du site | ⏳ En attente |
-| Certifications LinkedIn | ⏳ En attente |
+| URL Netlify du site | ✅ `portfolio-lpro.netlify.app` |
+| Certifications LinkedIn | ✅ Fortinet FCF (déc. 2025) |
 | Projets perso/académiques | ⏳ En attente |
 | Photo de profil | ⏳ En attente |
